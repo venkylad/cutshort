@@ -57,6 +57,7 @@
   border-radius: 50%;
   border: 1px solid #d8deea;
   color: rgb(50, 50, 50);
+  cursor: pointer;
 }
 
 .steps-container .step-active {
@@ -72,6 +73,7 @@
   border-radius: 50%;
   border: 1px solid #f4f6fa;
   color: white;
+  cursor: pointer;
 }
 
 .step-1-container {
