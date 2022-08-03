@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Logo from './images/logo.svg'
+import './App.css'
+import Step1 from './components/steps/Step1'
+import Step2 from './components/steps/step2'
+import Step3 from './components/steps/Step3'
+import Step4 from './components/steps/Step4'
+import Steps from './components/steps/Steps'
 
-function App() {
+const App = () => {
+
+  const [step, setStep] = useState(1)
+
+  const handleNextStep = () => {
+    setStep((prevState) => prevState + 1)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <div className='logo-div'>
+        <img className='logo' src={Logo} alt="" />
+        Eden
+      </div>
+      <Steps step={step} />
+      <Step1 step={step} handleNextStep={handleNextStep} />
+      <Step2 step={step} handleNextStep={handleNextStep} />
+      <Step3 step={step} handleNextStep={handleNextStep} />
+      <Step4 step={step} handleNextStep={handleNextStep} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
